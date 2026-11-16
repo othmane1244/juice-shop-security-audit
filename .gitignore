@@ -1,0 +1,38 @@
+# Exports bruts Jit (CSV) : peuvent contenir des extraits de code et des
+# valeurs de secrets. Seule la synthèse docs/jit/resultats-*.md est versionnée.
+reports/jit/brut/
+
+# Archives d'images Docker (docker save) : plusieurs centaines de Mo.
+# Le README les crée temporairement dans reports/ pour le scan Trivy.
+*.tar
+*.tar.gz
+
+# Sorties brutes des contrôles de secrets : seuls les rapports expurgés
+# sont versionnés.
+reports/**/brut/
+reports/**/*-brut.*
+
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node.js
+node_modules/
+
+# Éditeurs et systèmes
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
